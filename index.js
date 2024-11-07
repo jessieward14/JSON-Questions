@@ -98,3 +98,103 @@ console.log(unique);
 // fetch('./rawBooks.json')
 //     .then((response) => response.json())
 //     .then((json) => console.log(json));
+
+const counts=[];
+
+for (let f=0;f<unique.length;f++){
+
+let count3=0;
+for(let k=0;k<data.length;k++){
+    if(unique[f]==data[k].category){
+    count3=count3+1;
+}
+}
+
+counts.push(count3);}
+console.log(counts);
+
+
+
+
+    
+    // Initialize maximum element
+    let connection = 0; 
+    let max = counts[0]; 
+
+    // Traverse array elements  
+    // from second and compare 
+    // every element with current max  
+    for (let i = 1; i < counts.length; i++) {
+        if (counts[i] > max) {
+            max = counts[i]; 
+            connection = i;
+        }
+    } 
+    console.log(max);
+    console.log(connection);
+    console.log(unique[connection]);
+
+//Most owned author
+
+const author =[];
+
+  for(let x = 0; x< data.length; x++){
+        author.push(data[x].author);
+  }
+console.log(author);
+
+let unique2 = [];
+  let count5 =0;
+  let start3 = false;
+
+  for (let j = 0; j < author.length; j++) {
+    for (let k = 0; k < unique2.length; k++) {
+        if (author[j] == unique2[k]) {
+            start3 = true;
+        }
+    }
+    count5++;
+    if (count5 == 1 && start3 == false) {
+        unique2.push(author[j]);
+    }
+    start3 = false;
+    count5 = 0;
+}
+
+console.log(unique2.length);
+console.log(author.length);
+
+
+const counts2=[];
+
+for (let f=0;f<unique2.length;f++){
+
+let count6=0;
+for(let k=0;k<data.length;k++){
+    if(unique2[f]==data[k].author){
+    count6=count6+1;
+}
+}
+
+counts2.push(count6);}
+console.log(counts2);
+
+
+    
+let connection2 = 0; 
+let max2 = counts2[0]; 
+
+// Traverse array elements  
+// from second and compare 
+// every element with current max  
+for (let i = 1; i < counts2.length; i++) {
+    if (counts2[i] > max2) {
+        max2 = counts2[i]; 
+        connection2 = i;
+    }
+} 
+console.log(max2);
+console.log(connection2);
+console.log(unique2[connection2]);
+
+//find cool stat
